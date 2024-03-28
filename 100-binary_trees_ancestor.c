@@ -15,11 +15,14 @@ binary_tree_t *binary_trees_ancestor(
 	const binary_tree_t *temp_s;
 	const binary_tree_t *temp_f;
 
-	if (first == NULL || second == NULL)
+	if (!first || !second)
+		return (NULL);
+	if (first != second)
 		return (NULL);
 
 	if (second->parent == first)
 		return (second->parent);
+
 	temp_f = first;
 	temp_s = second;
 
